@@ -11,7 +11,7 @@ const app = express()
 const PORT = process.env.PORT || 3001
 
 // Create handlebars w/ custom helpers
-const hbs = exphbs.create()
+const hbs = exphbs.create({ helpers })
 
 // Session details
 const sess = {
