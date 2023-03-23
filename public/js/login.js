@@ -1,21 +1,22 @@
 const loginFormHandler = async (event) => {
-    event.preventDefualt();
+    event.preventDefault();
 
-const userName = document.querySelector('#userName-login').value.trim();
-const password = document.querySelector('#password-login').value.trim();
+const username = document.querySelector('#login-username').value.trim();
+const password = document.querySelector('#login-password').value.trim();
 
-if (userName && password) {
+if (username && password) {
     //need to add route for fetch
-    const response = await fetch('/api/users/login' , {
+    const response = await fetch('/api/user/login' , {
         method: 'post',
-        body: JSON.stringify({ userName, password }),
+        body: JSON.stringify({ username: username, password: password }),
         headers: { 'Content-Type': 'application/json' },
     });
 
     if (response.ok) {
-        document.location.replace('/profile');
+        document.location.replace('/');
+        document.location.reload()
     } else {
-        alert(response.statusText);
+        alert("Invalid username or password");
     }
 }
 };
