@@ -1,10 +1,18 @@
 // where home screen will be rendered
 const router = require('express').Router()
 const { User, Review } = require('../models')
+<<<<<<< HEAD
+=======
+
+// Ben
+
+// localhost:3001/
+>>>>>>> main
 
 // Render homepage with reviews
 router.get('/', async (req, res) => {
     try {
+<<<<<<< HEAD
         const reviewData = await Review.findAll({
             include: [
                 {
@@ -19,6 +27,10 @@ router.get('/', async (req, res) => {
 
         res.render('homepage', { Reviews, logged_in: req.session.logged_in });
 
+=======
+        // TODO: Add rendering for reviews
+        res.render('homepage', { logged_in: req.session.logged_in })
+>>>>>>> main
     } catch (err) {
         res.status(500).json(err)
     }
