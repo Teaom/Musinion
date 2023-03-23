@@ -1,6 +1,6 @@
 // where home screen will be rendered
 const router = require('express').Router()
-// const { User, Review } = require('../models')
+const { User, Review } = require('../models')
 
 // Ben
 
@@ -10,7 +10,7 @@ const router = require('express').Router()
 router.get('/', async (req, res) => {
     try {
         // TODO: Add rendering for reviews
-        res.render('homepage')
+        res.render('homepage', { logged_in: req.session.logged_in })
     } catch (err) {
         res.status(500).json(err)
     }

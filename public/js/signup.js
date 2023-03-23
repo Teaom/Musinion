@@ -1,21 +1,22 @@
 const signupFormHandler = async (event) => {
     event.preventDefault();
 
-    const name = document.querySelector('#userName-signup').value.trim();
-    const password = document.querySelector('#password-signup').value.trim();
+    const username = document.querySelector('#signup-username').value.trim();
+    const password = document.querySelector('#signup-password').value.trim();
 
-    if (name && password) {
+    if (username && password) {
         //need to add route for fetch
-        const response = await fetch ('/api/users' , {
+        const response = await fetch ('/api/user' , {
             method: 'POST',
-            body: JSON.stringify({ name, password }),
+            body: JSON.stringify({ username: username, password: password }),
             headers: { 'Content-Type': 'application/json' },
         });
 
         if (response.ok) {
-            document.location.replace('/profile');
+            document.location.replace('/');
+            document.location.reload()
         } else {
-            alert(response.statusText);
+            alert("Account couldn't be created");
         }
     }
 };
