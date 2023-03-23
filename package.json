@@ -28,5 +28,8 @@
   "bugs": {
     "url": "https://github.com/Teaom/Project-2/issues"
   },
-  "homepage": "https://github.com/Teaom/Project-2#readme"
+  "homepage": "https://github.com/Teaom/Project-2#readme",
+  "dependencies": {
+    "node-modules": "^1.0.1"
+  }
 }
