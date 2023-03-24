@@ -53,6 +53,14 @@ router.get('/Review/:id', async (req, res) => {
                 {
                     model: User,
                     attributes: ['username']
+                },
+                {
+                    model: Note,
+                    include: [
+                        {
+                            model: User
+                        }
+                    ]
                 }
             ]
         });
@@ -60,7 +68,7 @@ router.get('/Review/:id', async (req, res) => {
         const singleReview = reviewData.get({ plain: true });
 
         res.render('singleReview',
-            { singleReview });
+            { singleReview, logged_in: req.session.logged_in });
     } catch (err) {
         res.status(500).json(err)
     }

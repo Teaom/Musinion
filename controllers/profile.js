@@ -1,11 +1,11 @@
 // This is where user personal reviews will be rendered to /profile (user can only see their own reviews here)
 const router = require('express').Router()
-const { Review } = require('../models')
+const { Review, User } = require('../models')
 const withAuth = require('../utils/auth')
 
+// Get all routes created by the current user
+router.get('/', withAuth, async (req, res) => {
 
-  router.get('/', withAuth, async (req, res) => {
-    
     try {
         const reviewData = await Review.findAll({
             include: [
