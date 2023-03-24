@@ -1,6 +1,7 @@
 // This is where user personal reviews will be rendered to /profile (user can only see their own reviews here)
 const router = require('express').Router()
 const { Review } = require('../models')
+const withAuth = require('../utils/auth')
 
 
   router.get('/', withAuth, async (req, res) => {

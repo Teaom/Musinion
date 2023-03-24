@@ -1,6 +1,7 @@
 // where home screen will be rendered
 const router = require('express').Router()
 const { User, Review } = require('../models')
+const withAuth = require('../utils/auth')
 
 // Render homepage with reviews
 router.get('/', async (req, res) => {
@@ -64,4 +65,23 @@ router.get('/Review/:id', async (req, res) => {
         res.status(500).json(err)
     }
 });
+
+// Get route to render 'create-review' handlebars
+router.get('/create-review', withAuth, async (req, res) => {
+    try { 
+        // const userData = await User.findOne({ where: { username: req.body.username } })
+    
+        // if (!userData) {
+        //     res.status(400).json({ message: 'Please sign in!'})
+        //     return
+        // }
+        
+        res.render('create-review', {
+            logged_in: req.session.logged_in 
+        });
+    } catch (err) {
+        res.status(500).json(err)
+    }  
+});
+
 module.exports = router
