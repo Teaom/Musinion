@@ -1,6 +1,6 @@
 // where home screen will be rendered
 const router = require('express').Router()
-const { User, Review } = require('../models')
+const { User, Review, Note } = require('../models')
 
 // Render homepage with reviews
 router.get('/', async (req, res) => {
@@ -52,6 +52,14 @@ router.get('/Review/:id', async (req, res) => {
                 {
                     model: User,
                     attributes: ['username']
+                },
+                {
+                    model: Note,
+                    include: [
+                        {
+                            model: User
+                        }
+                    ]
                 }
             ]
         });
@@ -59,9 +67,13 @@ router.get('/Review/:id', async (req, res) => {
         const singleReview = reviewData.get({ plain: true });
 
         res.render('singleReview',
-            { singleReview });
+            { singleReview, logged_in: req.session.logged_in });
     } catch (err) {
         res.status(500).json(err)
     }
 });
+
+// Render create review
+
+
 module.exports = router
