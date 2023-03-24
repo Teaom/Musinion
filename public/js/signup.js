@@ -6,7 +6,7 @@ const signupFormHandler = async (event) => {
 
     if (username && password) {
         //need to add route for fetch
-        const response = await fetch ('/api/user' , {
+        const response = await fetch('/api/user', {
             method: 'POST',
             body: JSON.stringify({ username: username, password: password }),
             headers: { 'Content-Type': 'application/json' },
@@ -14,7 +14,6 @@ const signupFormHandler = async (event) => {
 
         if (response.ok) {
             document.location.replace('/');
-            document.location.reload()
         } else {
             alert("Account couldn't be created");
         }
