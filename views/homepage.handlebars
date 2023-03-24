@@ -1,11 +1,12 @@
-{{!-- Ben --}}
 {{#each Reviews as |review|}}
-<div class="card" style="width: 18rem;">
-  <img src="..." class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
+<div class="card ms-2 bg-secondary  border border-dark border-2 " style="width: 18rem;">
+  <img src="{{review.cover_url}}" class="card-img-top rounded border border-dark border-2 mt-2 ">
+  <div class="card-body border border-dark border-2 m-1 rounded bg-light ">
+    <h4 class="card-title">{{review.album_name}}</h4>
+    <h5 class="card-title">by {{review.artist_name}}</h5>
+    <p class="card-text">{{review.review}}</p>
+    <h5 class="card-title">&#11088;{{review.review_rating}} out of 5&#11088;</h5>
+    <h6 class="card-title"> Reviewed by: {{user.username}}</h6>
   </div>
 </div>
 {{/each}}
