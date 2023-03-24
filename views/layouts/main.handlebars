@@ -45,7 +45,7 @@
                     {{#if logged_in}}
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                         aria-expanded="false">
-                        Hello, {{user.username}}!
+                        Hello, {{username}}!
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end">
                         <li><a class="dropdown-item" href="/profile">Your Posts</a></li>
@@ -68,13 +68,13 @@
 
     <main class="mb-4">
         <div class="container-fluid mt-4">
-      {{{ body }}}
-      </div>
+            {{{ body }}}
+        </div>
     </main>
 
     {{!-- Conditionally render logout.js (if user is logged in, script will throw errors otherwise) --}}
     {{#if logged_in}}
-    <script src="/js/logout.js"></script>
+        <script src="/js/logout.js"></script>
     {{/if}}
 </body>
 </html>
