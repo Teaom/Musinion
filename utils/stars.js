@@ -1,13 +1,4 @@
-// Helper function for formatting dates on reviews/comments
-module.exports = {
-    format_date: (date) => {
-        return `${new Date(date).getMonth() + 1}/${new Date(date).getDate()}/${new Date(date).getFullYear()
-            }`;
-    }
-}
-
-
-//  Handlebars.registerHelper('starRating' , function(stars){
+// Handlebars.registerHelper('starRating' , function(stars){
 //     const rating = document.getElementById('rating')
 // const starOne = document.getElementById('star1')
 // const starTwo = document.getElementById('star2')

@@ -3,20 +3,27 @@
         <h3>Create a Review</h3>
         <form class="create-review-form">
             <label for="artist" class="form-label">Artist Name</label>
-            <input type="text" class="form-control mb-3" id="artist"/>
-            
+            <input type="text" class="form-control mb-3" id="artist" />
+
             <label for="album" class="form-label">Album Name</label>
-            <input type="text" class="form-control mb-3" id="album"/>
-            
+            <input type="text" class="form-control mb-3" id="album" />
+
             <label for="review" class="form-label">Your Review</label>
-            <input type="text" class="form-control mb-3" id="review"/>
-            
+            <input type="text" class="form-control mb-3" id="review" />
+
             <label for="rating" class="form-label">Your Rating</label>
-            <input type="text" class="form-control mb-3" id="rating"/>
-            
+            <select class="form-control mb-3" id="rating" name="out of 5 stars">
+                <option selected disabled hidden> &#11088;out of 5 stars&#11088;</option>
+                <option value="1" id="star1">1</option>
+                <option value="2" id="star2">2</option>
+                <option value="3" id="star3">3</option>
+                <option value="4" id="star4">4</option>
+                <option value="5" id="star5">5</option>
+            </select>
+
             <label for="cover" class="form-label">Cover Photo</label>
-            <input type="text" class="form-control mb-3" id="cover"/>
-            
+            <input type="text" class="form-control mb-3" id="cover" />
+
             <button type="submit" class="btn btn-primary">Create Review</button>
         </form>
     </div>
