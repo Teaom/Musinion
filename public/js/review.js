@@ -1,3 +1,4 @@
+// Handler for creating the review forms, collects the given info and pushes to backend, where data is saved in db
 const createReview = async (event) => {
     event.preventDefault();
     

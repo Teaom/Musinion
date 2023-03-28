@@ -7,12 +7,13 @@ const createNoteHandler = async (event) => {
     event.preventDefault()
 
     const noteContents = document.querySelector('#note-form').value
+    console.log(noteContents)
 
     if (noteContents) {
         const response = await fetch('/api/note', {
             method: 'POST',
             body: JSON.stringify({ review_id: id, contents: noteContents }),
-            headers: { 'Content-type': 'applicaton/json' }
+            headers: { 'Content-type': 'application/json' }
         })
 
         if (response.ok) {

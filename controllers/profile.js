@@ -19,7 +19,7 @@ router.get('/', withAuth, async (req, res) => {
             }
         })
         const Reviews = reviewData.map((review) => review.get({ plain: true }))
-        res.render('profile', { Reviews, logged_in: req.session.logged_in })
+        res.render('profile', { Reviews, logged_in: req.session.logged_in, username: req.session.username })
     } catch (err) {
         res.status(500).json(err)
     }

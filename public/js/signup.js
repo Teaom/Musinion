@@ -1,3 +1,4 @@
+// Collects signup info and pushes it to backend and saves to database (hashes password in the process)
 const signupFormHandler = async (event) => {
     event.preventDefault();
 
@@ -5,7 +6,6 @@ const signupFormHandler = async (event) => {
     const password = document.querySelector('#signup-password').value.trim();
 
     if (username && password) {
-        //need to add route for fetch
         const response = await fetch('/api/user', {
             method: 'POST',
             body: JSON.stringify({ username: username, password: password }),

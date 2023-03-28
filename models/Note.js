@@ -3,6 +3,7 @@ const sequelize = require('../config/connection')
 
 class Note extends Model {}
 
+// Note model which references user and review id's
 Note.init(
     {
         id: {
