@@ -22,7 +22,7 @@ Note.belongsTo(User, {
 })
 
 Review.hasMany(Note, {
-    foreignKey: 'note_id',
+    foreignKey: 'review_id',
     onDelete: 'CASCADE'
 })
 

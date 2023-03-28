@@ -1,49 +1,51 @@
-<div class="card">
-  <img src="{{review.cover_url}}" class="card-img-top" />
+{{!-- Single Review card --}}
+<div class="card m-1 bg-secondary  border border-dark border-2 ">
   <div class="card-body">
-    <h4 class="card-title">{{review.album_name}}</h4>
-    <h5 class="card-title">by {{review.artist_name}}</h5>
-    <p class="card-text">{{review.review}}</p>
-    <h5 class="card-title">&#11088;{{review.review_rating}}
+    <img src="{{singleReview.cover_url}}" class="card-img-top rounded border border-dark border-2 m-1" style="width: 18rem;"/>
+    <div class="card-body border border-dark border-2 m-1 rounded bg-light ">
+      <h4 class="card-title">{{singleReview.album_name}}</h4>
+      <h5 class="card-title">by {{singleReview.artist_name}}</h5>
+      <p class="card-text">{{singleReview.review}}</p>
+      <h5 class="card-title">&#11088;{{singleReview.review_rating}}
       out of 5&#11088;</h5>
-    <h6 class="card-title"> Reviewed by: {{user.username}}</h6>
+      <h6 class="card-title"> Reviewed by: {{singleReview.user.username}}</h6>
+    </div>
   </div>
 </div>
 
-{{#if note}}
+{{!-- if notes exist for the review, render this section --}}
+{{#if singleReview.notes}}
 <div class="card mt-4">
   <div class="card-header">
     Notes
   </div>
   <ul class="list-group list-group-flush">
-    {{#each review.note as |note|}}
+    {{#each singleReview.notes as |note|}}
     <li class="list-group-item">
         <p class="fw-bold mb-0">"{{note.contents}}"</p>
-        <p class="blockquote-footer fs-6 mt-1 mb-0"><span class="fw-bold">{{note.user.username}}</span> on {{format_date comment.date_created}} </p>
+        <p class="blockquote-footer fs-6 mt-1 mb-0"><span class="fw-bold">{{note.user.username}}</span> on {{format_date note.date_created}} </p>
     </li>
     {{/each}}
-    {{!-- <li class="list-group-item">
-        <p class="fw-bold mb-0">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-        <p class="blockquote-footer fs-6 mt-1 mb-0">Caesar</p>
-    </li>
-    <li class="list-group-item">
-        <p class="fw-bold mb-0">"What he said!!! ^"</p>
-        <p class="blockquote-footer fs-6 mt-1 mb-0">RandomGuy78</p>
-    </li> --}}
   </ul>
 </div>
 {{/if}}
 
+{{!-- If logged in, display the comment form --}}
 {{#if logged_in}}
 <div class="card mt-4">
   <div class="card-body">
     <form class="create-note-form">
       <div class="mb-3">
-        <label for="exampleFormControlTextarea1" class="form-label">Write <span class="fw-bold">{{user.username}}</span> a note! (Hint: be respectful)</label>
-        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+        <label for="note-form" class="form-label">Write <span class="fw-bold">{{singleReview.user.username}}</span> a note! (Hint: be respectful)</label>
+        <textarea class="form-control" id="note-form" rows="3"></textarea>
       </div>
       <button type="submit" class="btn btn-primary">Post Note</button>
     </form>
   </div>
 </div>
+{{/if}}
+
+{{!-- If logged in, use the given script (will throw errors otherwise) --}}
+{{#if logged_in}}
+<script src="/js/note.js"></script>
 {{/if}}

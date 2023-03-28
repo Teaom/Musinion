@@ -1,3 +1,4 @@
+// Collects login info and pushes it to back end to compare to data (including hashed password)
 const loginFormHandler = async (event) => {
     event.preventDefault();
 
@@ -5,7 +6,6 @@ const loginFormHandler = async (event) => {
     const password = document.querySelector('#login-password').value.trim();
 
     if (username && password) {
-        //need to add route for fetch
         const response = await fetch('/api/user/login', {
             method: 'post',
             body: JSON.stringify({ username: username, password: password }),

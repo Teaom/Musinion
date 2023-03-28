@@ -73,13 +73,13 @@ router.get('/Review/:id', async (req, res) => {
     } catch (err) {
         res.status(500).json(err)
     }
-});
+}); 
 
 // Get route to render 'create-review' handlebars
 router.get('/create-review', withAuth, async (req, res) => {
     try { 
         res.render('create-review', {
-            logged_in: req.session.logged_in 
+            logged_in: req.session.logged_in, username: req.session.username 
         });
     } catch (err) {
         res.status(500).json(err)
