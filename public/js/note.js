@@ -7,7 +7,6 @@ const createNoteHandler = async (event) => {
     event.preventDefault()
 
     const noteContents = document.querySelector('#note-form').value
-    console.log(noteContents)
 
     if (noteContents) {
         const response = await fetch('/api/note', {
