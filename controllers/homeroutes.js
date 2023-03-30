@@ -67,8 +67,6 @@ router.get('/Review/:id', async (req, res) => {
 
         const singleReview = reviewData.get({ plain: true });
 
-        console.log(singleReview)
-
         res.render('single-review', { singleReview, logged_in: req.session.logged_in, username: req.session.username })
     } catch (err) {
         res.status(500).json(err)

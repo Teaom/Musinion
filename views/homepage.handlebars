@@ -1,8 +1,9 @@
+<h1 style="color: white;">My Feed</h1>
 <div class="row">
   {{#each Reviews as |review|}}
-  <div class="card m-1 bg-secondary  border border-dark border-2 " style="width: 18rem;">
+  <div class="card m-1  border border-dark border-2 " style="width: 18rem; background-image: linear-gradient(to bottom right, rgb(50, 217, 230), rgb(122, 84, 189)); ">
     <img src="{{review.cover_url}}" class="card-img-top rounded border border-dark border-2 mt-2 ">
-    <div class="card-body border border-dark border-2 m-1 rounded bg-light ">
+    <div class="card-body d-flex flex-column border border-dark border-2 m-1 rounded bg-light ">
       <h4 class="card-title">{{review.album_name}}</h4>
       <h5 class="card-title">by {{review.artist_name}}</h5>
       <p class="card-text">{{review.review}}</p>
@@ -13,8 +14,8 @@
         <span id="star4" class="fa fa-star"></span>
         <span id="star5" class="fa fa-star"></span>
       </div>
-      <h6 class="card-title"> Reviewed by: {{user.username}}</h6>
-      <a href="/Review/{{review.id}}">Leave a Note!</a>
+      <h6 class="card-title mt-3 mb-3"> Reviewed by: <span class="fw-bold">{{user.username}}</span></h6>
+      <a type="button" class="btn mt-auto" style="width: 8rem; background-image: linear-gradient(to bottom right, rgb(50, 217, 230), rgb(122, 84, 189)); border: 0;" href="/Review/{{review.id}}">Expand</a>
     </div>
   </div>
   {{/each}}
