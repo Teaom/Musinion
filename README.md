@@ -1,4 +1,4 @@
-# Project-2 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+# Musinion [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Table of Contents
 - [Description](#Description)
@@ -42,7 +42,7 @@ THEN I am logged out and taken to the homepage.
 ```
 
 ## Installation
-<Insert Installation>
+n/a
 
 ## Usage
 As a user, you will be able to view everyone's reviews, create reviews, and leave a note on anyone's review. As you create a review you can type in the Album, Artist, Review, then select a rating, and lastly paste in a image url for the cover album. <br>

@@ -1,5 +1,5 @@
 {{!-- Single Review card --}}
-<div class="card m-1 bg-secondary  border border-dark border-2 ">
+<div class="card m-3 bg-secondary" style="background-image: linear-gradient(to bottom right, rgb(50, 217, 230), rgb(122, 84, 189));">
   <div class="card-body">
     <img src="{{singleReview.cover_url}}" class="card-img-top rounded border border-dark border-2 m-1" style="width: 18rem;"/>
     <div class="card-body border border-dark border-2 m-1 rounded bg-light ">
@@ -20,7 +20,7 @@
 
 {{!-- if notes exist for the review, render this section --}}
 {{#if singleReview.notes}}
-<div class="card mt-4">
+<div class="card m-3">
   <div class="card-header">
     Notes
   </div>
@@ -37,7 +37,7 @@
 
 {{!-- If logged in, display the comment form --}}
 {{#if logged_in}}
-<div class="card mt-4">
+<div class="card m-3">
   <div class="card-body">
     <form class="create-note-form">
       <div class="mb-3">
@@ -47,7 +47,7 @@
       <button type="submit" class="btn btn-primary">Post Note</button>
     </form>
   </div>
-</div>
+</div> 
 {{/if}}
 
 {{!-- If logged in, use the given script (will throw errors otherwise) --}}
