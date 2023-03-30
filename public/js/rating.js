@@ -1,3 +1,4 @@
+// Star rating functionality
 const rating = [...document.querySelectorAll('.rating-container')]
 function star() {
 

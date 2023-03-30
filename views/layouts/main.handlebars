@@ -1,3 +1,4 @@
+{{!-- Renders the universal header across all views --}}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -44,6 +45,7 @@
         <div class="container-fluid d-flex justify-content-end">
             <ul class="navbar-nav d-flex">
                 <li class="nav-item dropdown">
+                    {{!-- If logged in, display the user's name, and the dropdown will contain 'My Reviews and logout' --}}
                     {{#if logged_in}}
                     <a class="nav-link dropdown-toggle" style=" color: white;" href="#" role="button" data-bs-toggle="dropdown"
                         aria-expanded="false">
@@ -53,6 +55,7 @@
                         <li><a class="dropdown-item" href="/profile">My Reviews</a></li>
                         <li><a class="dropdown-item" id="logout" style="cursor: pointer;">Logout</a></li>
                     </ul>
+                    {{!-- Else (if not logged in), display 'Login or Signup' with dropdown --}}
                     {{else}}
                     <a class="nav-link dropdown-toggle" style=" color: white;" href="#" role="button" data-bs-toggle="dropdown"
                         aria-expanded="false">
@@ -70,6 +73,7 @@
 
     <main class="mb-4">
         <div class="container-fluid mt-4">
+            {{!-- Display the other views depending on URL --}}
             {{{ body }}}
         </div>
     </main>
