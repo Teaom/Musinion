@@ -6,8 +6,13 @@
       <h4 class="card-title">{{singleReview.album_name}}</h4>
       <h5 class="card-title">by {{singleReview.artist_name}}</h5>
       <p class="card-text">{{singleReview.review}}</p>
-      <h5 class="card-title">&#11088;{{singleReview.review_rating}}
-      out of 5&#11088;</h5>
+      <div class="rating-{{singleReview.review_rating}} rating-container">
+        <span id="star1" class="fa fa-star"></span>
+        <span id="star2" class="fa fa-star"></span>
+        <span id="star3" class="fa fa-star"></span>
+        <span id="star4" class="fa fa-star"></span>
+        <span id="star5" class="fa fa-star"></span>
+      </div>
       <h6 class="card-title"> Reviewed by: {{singleReview.user.username}}</h6>
     </div>
   </div>
