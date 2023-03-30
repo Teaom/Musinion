@@ -7,7 +7,7 @@
 - [Contributing](#Contributing)
 - [Deployment](#Deployment)
 - [License](#License)
-- [Mock Up](#Mock)
+- [Mockup](#Mockup)
 
 ## Description
 This is a full stack web application that uses MVC Model, Node.js, MySQL, Express, and Bootstrap to name a few. This application is an online platform for music lovers from all over the universe to come together and share their thoughts and opinions that we all care about, you know what I mean. There are not many places, in this day and age, where we can find such valuable information about different albums and artist. So if you feel like you are missing out, please visit the site, sign up, and share your highly valued words which are running through your head so that you can sleep better at night!
@@ -15,8 +15,8 @@ This is a full stack web application that uses MVC Model, Node.js, MySQL, Expres
 ```
 User Story
 AS A Music Lover
-I WANT to share and view other's thoughts and opinions of different albums.
-SO THAT I can give reviews and find new albums/artists to listen to.
+I WANT to share and view other's thoughts and opinions of different albums
+SO THAT I can give reviews and find new albums/artists to listen to
 
 Acceptance Criteria
 GIVEN a web application that lets users post reviews and stores reviews
@@ -29,7 +29,7 @@ AND I am able to create a review
 WHEN I go to create a review
 THEN I am given the inputs for the review
 WHEN I create a review
-THEN I see my review show up on the homepage, which is public.
+THEN I see my review show up on the homepage, which is public
 WHEN I click on my profile/posts
 THEN I can view all of my reviews
 WHEN I click on leave a note/comment on a selected review
@@ -38,7 +38,7 @@ AND post my own note/comment on the review
 WHEN I post my note/comment
 THEN I can see it with the others, which is public
 WHEN I click logout
-THEN I am logged out and taken to the homepage.
+THEN I am logged out and taken to the homepage
 ```
 
 ## Installation
@@ -55,11 +55,12 @@ Daniel - Teaom<br>
 Braden - BradenKim22
 
 ## Deployment
-Follow the link for the application <Insert Link>
+https://musinion.herokuapp.com/
 
 ## License
 Please refer to the [MIT](https://opensource.org/licenses/MIT) License.
 
-## MockUp
-![](./___/___/___.png)
-![](./___/___/___.png)
+## Mockup
+![Home Page](./public/images/musinion.herokuapp.com_.png)
+![Create Review](./public/images/musinion.herokuapp.com_create-review.png)
+![Single Review](./public/images/musinion.herokuapp.com_Review_4.png)

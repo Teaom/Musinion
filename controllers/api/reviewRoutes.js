@@ -3,6 +3,7 @@ const router = require('express').Router();
 const Review = require('../../models/Review');
 const withAuth = require('../../utils/auth');
 
+// creates the review and adds it to db
 router.post('/', withAuth, async (req, res) => {
     try {
         const newReview = await Review.create({
