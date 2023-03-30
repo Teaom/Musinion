@@ -6,3 +6,9 @@
 .rating-1  #star1 {
     color:gold;
 }
+
+.logo {
+    width: 150px;
+    height: 50px;
+    margin-right: 15px
+}
