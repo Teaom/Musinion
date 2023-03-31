@@ -18,24 +18,24 @@ router.post('/', withAuth, async (req, res) => {
 });
 
 
-// router.delete('/:id', async(req, res) => {
-//     try {
-//         const blogData = await Review.destroy({
-//             where: {
-//                 id: req.params.id
-//             }
-//         })
+router.delete('/:id', async(req, res) => {
+    try {
+        const blogData = await Review.destroy({
+            where: {
+                id: req.params.id
+            }
+        })
 
-//         if (!blogData) {
-//             res.status(404).json({ message: 'No review found with this id' })
-//             return
-//         }
+        if (!blogData) {
+            res.status(404).json({ message: 'No review found with this id' })
+            return
+        }
 
-//         res.status(200).json(blogData)
-//     } catch (err) {
-//         console.log(err)
-//         res.status(500).json(err)
-//     }
-// })
+        res.status(200).json(blogData)
+    } catch (err) {
+        console.log(err)
+        res.status(500).json(err)
+    }
+})
 
 module.exports = router;
